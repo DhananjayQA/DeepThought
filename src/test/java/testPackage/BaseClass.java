@@ -11,7 +11,7 @@ public class BaseClass {
 	
 	@BeforeTest
 	public void beforetest() {
-	driver= StartBrowser.Chromebrowser("Chrome","https://www.demo.guru99.com/V4/",10);
+	driver= StartBrowser.Chromebrowser("Chrome","https://beta.deepthought.education/login",10);
 
 	}
 	

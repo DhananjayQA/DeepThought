@@ -5,8 +5,9 @@
     <classes>
       <class name="testPackage.TestclassTNG">
         <methods>
-          <include name="aftertest"/>
+          <include name="test"/>
           <include name="test1"/>
+          <include name="aftertest"/>
           <include name="beforetest"/>
         </methods>
       </class> <!-- testPackage.TestclassTNG -->

@@ -8,43 +8,36 @@ import org.openqa.selenium.support.PageFactory;
 import mainutility.ExpWait;
 
 public class LoginPage {
+	@FindBy(xpath="//input[ @id=\"username\"]")
+    private WebElement Email;
+	@FindBy(xpath="//input[ @id=\"password\"]")
+    private WebElement Password;
+	@FindBy(xpath="//button[ @id= \"login\"]")
+    private WebElement Loginbutton;
 	
-	@FindBy(xpath="//input[@name=\"uid\"]")
-	private WebElement UserName;
-	
-	@FindBy(xpath="//input[@name=\"password\"]")
-	private WebElement Password;
-	
-	@FindBy(xpath="//input[@name=\"btnLogin\"]")
-	private WebElement Login;
-
 	private WebDriver driver;
 	
-	//@FindBy(xpath="//a[text()=\"New Customer\"]/parent::li/parent::ul/parent::div")
-	//private WebElement Newcustomer;
-	
-	
-
-	public  LoginPage(WebDriver driver) {
+public  LoginPage(WebDriver driver) {
 		
-		PageFactory.initElements( driver, this);
+		PageFactory.initElements(driver, this);
 		this.driver=driver;
-		
 	}
+
+public void Sendemail(String user) {
+	Email.sendKeys(user);
 	
-	public void SenduserName(String user) {
-		UserName.sendKeys(user);
-	}
-	public void Sendpassword(String pass) {
-		ExpWait.ExplicitWait(10, "//input[@name=\"password\"]",driver);
-
-		Password.sendKeys(pass);
-	}
-	public void ClickOnLogin() {
-		Login.click();
-	}
-
-	/*public Boolean IsDisplayed() {
-		return Newcustomer.isDisplayed();
-	}*/
+	ExpWait.ExplicitWait(10, "//input[ @id=\"username\"]", driver);
 }
+	
+public void Sendpass(String pass) {
+	Password.sendKeys(pass);
+}
+public void ClickonLogin() {
+	Loginbutton.click();
+	
+	
+}
+}
+
+
+

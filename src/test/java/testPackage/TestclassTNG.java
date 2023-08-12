@@ -20,6 +20,8 @@ import org.testng.annotations.Test;
 
 import pomPackage.LoginPage;
 import pomPackage.NewCustomer;
+import pomPackage.Register;
+import pomPackage.RegisterPage;
 import testutility.FileClass;
 import testutility.StartBrowser;
 
@@ -40,21 +42,40 @@ public class TestclassTNG extends BaseClass{
 		
 	@Test
 	public void test() throws IllegalStateException, IOException {
-		LoginPage Login= new LoginPage(driver);
-		Login.SenduserName(FileClass.filedata(2, 0));
-		Login.Sendpassword(FileClass.filedata(2, 1));
-		Login.ClickOnLogin();
-		//Boolean result= Login.IsDisplayed();
-		String ExceptedUrl= "https://www.demo.guru99.com/V4/manager/Managerhomepage.php";
-		String ActualURl=driver.getCurrentUrl();		
-		Assert.assertEquals(ExceptedUrl,ActualURl);
+		
+		LoginPage login= new LoginPage(driver);
+		login.Sendemail("lokhandedhananjay4@gmail.com");
+		login.Sendpass("159753@Flower");
+		login.ClickonLogin();
+		
+//		LoginPage Login= new LoginPage(driver);
+//		Login.SenduserName(FileClass.filedata(2, 0));
+//		Login.Sendpassword(FileClass.filedata(2, 1));
+//		Login.ClickOnLogin();
+//		//Boolean result= Login.IsDisplayed();
+//		String ExceptedUrl= "https://www.demo.guru99.com/V4/manager/Managerhomepage.php";
+//		String ActualURl=driver.getCurrentUrl();		
+//		Assert.assertEquals(ExceptedUrl,ActualURl);
 		
 	}
 	
 //	@Test
 //	public void test1() throws IllegalStateException, IOException {
-//		LoginPage Login= new LoginPage(driver);
-//		Login.ClickOnLogin();	
+//		
+//		LoginPage login= new LoginPage(driver);
+//		login.Sendemail("lokhandedhananjay4@gmail.com");
+//		login.Sendpass("159753@flower");
+//		login.ClickonLogin();
+//		
+	
+//	@Test
+//	public void test1() throws IllegalStateException, IOException {
+//		RegisterPage register= new RegisterPage(driver);
+//		register.Sendemail("lokhandedhananjay4@gmail.com");	
+//		register.SenduserName("Dhanu1997");
+//		register.Sendpassword("159753@Flower");
+//		register.Sendpasswordconfirm("159753@Flower");
+//		register.Clickonregisternow();
 //	}
 	
 //	@Test
