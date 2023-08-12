@@ -4,7 +4,6 @@
   <test thread-count="5" name="test">
     <classes>
       <class name="testPackage.TestclassTNG"/>
-       <class name="testPackage.TestclassTNG1"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
